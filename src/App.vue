@@ -144,9 +144,9 @@ class Check{
             // считаем количество очков 
             let newPoinst = points + newArray.length
 
-            console.log(newPoinst)
+            
             data.points = newPoinst
-            console.log(data.points)
+            
 
 
             // обновляет массивы 
@@ -159,12 +159,14 @@ class Check{
               idOne !== idTwo || keyOne !== keyTwo || keyOne !== keyTwo
             ){
 
-             console.log(data.cards[0].id)
-           
+        
+          // Даю значения картам чтобы они закрылись 
            
           data.cards[idOne - 1 ].completed = false
           data.cards[idTwo - 1].completed = false
 
+
+          // Сравнивает состояние и дает свои значения 
           if(data.cards[idOne - 1 ].completed == false){
             data.cards[idOne - 1 ].title = data.cards[idOne - 1 ].titleNon
           }
@@ -303,37 +305,10 @@ methods: {
     this.closeWrapperBoolean = !this.closeWrapperBoolean
     this.closeWrapperBooleanFinall = !this.closeWrapperBooleanFinall
 
-
-    
-// долго думал как рандомно перемешивать массив, так и не смог придумать
-    // this.cards = [
-    //         {id: 1, keyCard: 1, nativeTitle: 'https://st.depositphotos.com/2127699/2238/i/450/depositphotos_22389095-stock-photo-playing-card-ace-of-hearts.jpg', title: 'https://st.depositphotos.com/2127699/2238/i/450/depositphotos_22389095-stock-photo-playing-card-ace-of-hearts.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false },
-    //         {id: 2, keyCard: 2, nativeTitle: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knight_of_hearts_en.svg/1200px-Knight_of_hearts_en.svg.png', title: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knight_of_hearts_en.svg/1200px-Knight_of_hearts_en.svg.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 3, keyCard: 3, nativeTitle: 'https://c7.hotpng.com/preview/458/229/186/king-of-spades-playing-card-suit-jack-queen.jpg', title: 'https://c7.hotpng.com/preview/458/229/186/king-of-spades-playing-card-suit-jack-queen.jpg ', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 4, keyCard: 4, nativeTitle: 'https://c7.hotpng.com/preview/658/413/96/poker-queen-of-spades-playing-card-card-game-queen.jpg ', title:'https://c7.hotpng.com/preview/658/413/96/poker-queen-of-spades-playing-card-card-game-queen.jpg ', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 5, keyCard: 5, nativeTitle: 'https://astrometa.ru/images/winds/karty2/10-pik.png', title: 'https://astrometa.ru/images/winds/karty2/10-pik.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 6, keyCard: 6, nativeTitle: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BB%D0%BE%D0%BF%D0%B0%D1%82-%D0%B8%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BD%D0%B0-%D0%B1%D0%B5%D0%BB%D0%B8%D0%B7%D0%BD%D0%B5-132808061.jpg', title: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BB%D0%BE%D0%BF%D0%B0%D1%82-%D0%B8%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BD%D0%B0-%D0%B1%D0%B5%D0%BB%D0%B8%D0%B7%D0%BD%D0%B5-132808061.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 7, keyCard: 7, nativeTitle: 'https://astrometa.ru/images/winds/karty2/8-chervei.png', title: 'https://astrometa.ru/images/winds/karty2/8-chervei.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 8, keyCard: 8, nativeTitle: 'https://cdn.pixabay.com/photo/2015/08/11/11/56/spades-884174_960_720.png', title: 'https://cdn.pixabay.com/photo/2015/08/11/11/56/spades-884174_960_720.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 9, keyCard: 9, nativeTitle: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-%D1%81%D0%B5%D1%80%D0%B4%D0%B5%D1%86-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BA%D0%B0%D1%80%D1%82-142606432.jpg', title: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-%D1%81%D0%B5%D1%80%D0%B4%D0%B5%D1%86-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BA%D0%B0%D1%80%D1%82-142606432.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-
-
-    //         {id: 10,keyCard: 1, nativeTitle: 'https://st.depositphotos.com/2127699/2238/i/450/depositphotos_22389095-stock-photo-playing-card-ace-of-hearts.jpg ', title: 'https://st.depositphotos.com/2127699/2238/i/450/depositphotos_22389095-stock-photo-playing-card-ace-of-hearts.jpg ', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 11, keyCard: 2, nativeTitle:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knight_of_hearts_en.svg/1200px-Knight_of_hearts_en.svg.png', title: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Knight_of_hearts_en.svg/1200px-Knight_of_hearts_en.svg.png ', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 12, keyCard: 3, nativeTitle: 'https://c7.hotpng.com/preview/458/229/186/king-of-spades-playing-card-suit-jack-queen.jpg ', title: 'https://c7.hotpng.com/preview/458/229/186/king-of-spades-playing-card-suit-jack-queen.jpg ', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 13, keyCard: 4, nativeTitle:'https://c7.hotpng.com/preview/658/413/96/poker-queen-of-spades-playing-card-card-game-queen.jpg ', title: 'https://c7.hotpng.com/preview/658/413/96/poker-queen-of-spades-playing-card-card-game-queen.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 14, keyCard: 5, nativeTitle: 'https://astrometa.ru/images/winds/karty2/10-pik.png', title: 'https://astrometa.ru/images/winds/karty2/10-pik.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 15, keyCard: 6, nativeTitle: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BB%D0%BE%D0%BF%D0%B0%D1%82-%D0%B8%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BD%D0%B0-%D0%B1%D0%B5%D0%BB%D0%B8%D0%B7%D0%BD%D0%B5-132808061.jpg', title: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D0%BB%D0%BE%D0%BF%D0%B0%D1%82-%D0%B8%D0%B7%D0%BE%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BD%D0%B0-%D0%B1%D0%B5%D0%BB%D0%B8%D0%B7%D0%BD%D0%B5-132808061.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 16, keyCard: 7, nativeTitle: 'https://astrometa.ru/images/winds/karty2/8-chervei.png', title: 'https://astrometa.ru/images/winds/karty2/8-chervei.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 17, keyCard: 8, nativeTitle: 'https://cdn.pixabay.com/photo/2015/08/11/11/56/spades-884174_960_720.png', title: 'https://cdn.pixabay.com/photo/2015/08/11/11/56/spades-884174_960_720.png', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //         {id: 18, keyCard: 9, nativeTitle: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-%D1%81%D0%B5%D1%80%D0%B4%D0%B5%D1%86-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BA%D0%B0%D1%80%D1%82-142606432.jpg', title: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-%D1%81%D0%B5%D1%80%D0%B4%D0%B5%D1%86-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BA%D0%B0%D1%80%D1%82-142606432.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
-    //       ]
-
-
     //Рандомно раскидываю массив
     let oldArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 
-      
+    
     let count = 0;
     function compareRandom() {
       count++;
@@ -366,7 +341,7 @@ methods: {
             {id: 18, keyCard: 9, nativeTitle: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-%D1%81%D0%B5%D1%80%D0%B4%D0%B5%D1%86-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BA%D0%B0%D1%80%D1%82-142606432.jpg', title: 'https://thumbs.dreamstime.com/b/%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-%D1%81%D0%B5%D1%80%D0%B4%D0%B5%D1%86-%D0%BA%D0%BE%D1%81%D1%82%D1%8E%D0%BC-%D0%B8%D0%B3%D1%80%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85-%D0%BA%D0%B0%D1%80%D1%82-142606432.jpg', titleNon: 'https://i.pinimg.com/originals/b1/51/b4/b151b48f2d77cdd03b17256ce25886a5.jpg', completed: false, open: false},
           ]
     
-
+    //Союираю новый state с рандомными данными
     this.cards = [
           {id: 1, keyCard: oldCardsArray[oldArray[0] -1].keyCard, nativeTitle:oldCardsArray[oldArray[0] -1].nativeTitle, title: oldCardsArray[oldArray[0] -1].title , titleNon: oldCardsArray[oldArray[0] -1].titleNon , completed: false, open: false},
           {id: 2, keyCard: oldCardsArray[oldArray[1] -1].keyCard, nativeTitle: oldCardsArray[oldArray[1] -1].nativeTitle, title: oldCardsArray[oldArray[1] -1].title , titleNon: oldCardsArray[oldArray[1] -1].titleNon , completed: false, open: false},
@@ -387,9 +362,6 @@ methods: {
           {id: 17, keyCard: oldCardsArray[oldArray[16] -1].keyCard, nativeTitle: oldCardsArray[oldArray[16] -1].nativeTitle, title : oldCardsArray[oldArray[16] -1].title , titleNon: oldCardsArray[oldArray[16] -1].titleNon , completed: false, open: false},
           {id: 18, keyCard: oldCardsArray[oldArray[17] -1].keyCard, nativeTitle: oldCardsArray[oldArray[17] -1].nativeTitle, title : oldCardsArray[oldArray[17] -1].title , titleNon: oldCardsArray[oldArray[17] -1].titleNon , completed: false, open: false},
       ]
-
-    // let a = {id: this.cards[oldArray[0] - 1].id, key: this.cards[oldArray[0]].key, nativeTitle: this.cards[oldArray[0]].nativeTitle, titleNon : this.cards[oldArray[0]].titleNon , titleNon:this.cards[oldArray[0]].titleNon , completed: false, open: false}
-    console.log(this.cards[oldArray[0] -1].keyCard)
       
      this.points = 0
        
